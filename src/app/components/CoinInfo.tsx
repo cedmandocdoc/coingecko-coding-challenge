@@ -22,15 +22,25 @@ const CoinInfo = () => {
   const { data, loading } = useCoin(id, { minutes });
   const { coin } = data;
 
+  const Back = (
+    <Link to="/coins">
+      <Caret className="rotate-90 w-4 h-4" />
+    </Link>
+  );
+
   return (
     <section className="w-full max-w-[900px]">
       {loading && <Loader />}
+      {!loading && !coin && (
+        <div className="flex flex-col items-start gap-4">
+          {Back}
+          <p className="text-xl grow">Coin not found.</p>
+        </div>
+      )}
       {coin && (
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-4">
-            <Link to="/coins">
-              <Caret className="rotate-90 w-4 h-4" />
-            </Link>
+            {Back}
             <div className="flex gap-2 items-center">
               <img
                 className="w-10 h-10"

@@ -9,9 +9,9 @@ const App = () => {
       <h2 className="text-5xl text-center">Coingecko Coding Challenge</h2>
 
       <Switch>
-        <Redirect exact from="/" to="/coins" />
         <Route exact path="/coins" component={CoinsList} />
         <Route path="/coins/:id" component={CoinInfo} />
+        <Redirect from="*" to="/coins" />
       </Switch>
     </section>
   );
