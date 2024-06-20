@@ -26,7 +26,7 @@ ChartJS.register(
 
 const CoinInfoChart: FC<Props> = ({ coin }) => {
   const { latest, average } = coin;
-  const climbing = useMemo(() => latest > average, [latest, average]);
+  const climbing = useMemo(() => latest >= average, [latest, average]);
   const options = {
     responsive: true,
     plugins: {

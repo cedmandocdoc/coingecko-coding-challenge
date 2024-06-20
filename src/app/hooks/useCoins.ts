@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Coin from '../../models/Coin';
 import { delay } from '../../lib/async';
 
-const DELAY = import.meta.env.VITE_API_FETCH_INTERVAL?.toString() || '60000';
+const DELAY = import.meta.env.VITE_API_FETCH_INTERVAL?.toString() || '5000';
 
 const useCoins = () => {
   const [loading, setLoading] = useState(true);

@@ -8,8 +8,6 @@ npm install && npm run build && npm start
 
 Server is running at http://localhost:3001 by default.
 
-The environment variables for development were included for an easy running of the application and can be found at `.env.development`, but usually api keys should not be included. The project uses dotenv, example environment can be found at `.env.example`.
-
 ## Running in Development
 
 ```shell

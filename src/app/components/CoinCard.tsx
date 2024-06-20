@@ -23,7 +23,7 @@ const CoinCard: FC<Props> = ({ coin }) => {
     }).format(new Date(last.date));
   }, [history]);
 
-  const climbing = useMemo(() => latest > average, [latest, average]);
+  const climbing = useMemo(() => latest >= average, [latest, average]);
 
   return (
     <div className="w-96 max-w-full rounded overflow-hidden shadow-lg">

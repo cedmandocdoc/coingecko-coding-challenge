@@ -9,7 +9,7 @@ const {
   VITE_API_URL = 'https://api.coingecko.com/api/v3',
   VITE_API_KEY = 'CG-8yR4X6oVpUdyqWbWrcztCsxM',
   VITE_HEADER_KEY = 'x-cg-demo-api-key',
-  VITE_API_FETCH_INTERVAL = '60000',
+  VITE_API_FETCH_INTERVAL = '5000',
   VITE_API_MAX_RETRY_ERROR = '5',
 } = process.env;
 

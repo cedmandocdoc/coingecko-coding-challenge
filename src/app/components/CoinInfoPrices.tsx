@@ -9,7 +9,7 @@ type Props = {
 const CoinInfoPrices: FC<Props> = ({ coin }) => {
   const { latest, average } = coin;
 
-  const climbing = useMemo(() => latest > average, [latest, average]);
+  const climbing = useMemo(() => latest >= average, [latest, average]);
   return (
     <div className="flex flex-col gap-2">
       <p>
