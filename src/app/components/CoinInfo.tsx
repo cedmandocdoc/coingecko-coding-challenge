@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link, useParams, useHistory, useLocation } from 'react-router-dom';
 import useCoin from '../hooks/useCoin';
 import Loader from './Loader';
