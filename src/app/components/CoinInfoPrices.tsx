@@ -1,15 +1,14 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import Coin from '../../models/Coin';
 import Caret from './Caret';
+import useClimbing from '../hooks/useClimbing';
 
 type Props = {
   coin: Coin;
 };
 
 const CoinInfoPrices: FC<Props> = ({ coin }) => {
-  const { latest, average } = coin;
-
-  const climbing = useMemo(() => latest >= average, [latest, average]);
+  const climbing = useClimbing(coin);
   return (
     <div className="flex flex-col gap-2">
       <p>

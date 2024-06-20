@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import Coin from '../../models/Coin';
+import useClimbing from '../hooks/useClimbing';
 
 type Props = {
   coin: Coin;
@@ -25,8 +26,7 @@ ChartJS.register(
 );
 
 const CoinInfoChart: FC<Props> = ({ coin }) => {
-  const { latest, average } = coin;
-  const climbing = useMemo(() => latest >= average, [latest, average]);
+  const climbing = useClimbing(coin);
   const options = {
     responsive: true,
     plugins: {

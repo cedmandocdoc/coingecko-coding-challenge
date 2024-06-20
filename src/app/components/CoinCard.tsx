@@ -3,13 +3,14 @@ import Coin from '../../models/Coin';
 import Arrow from './Arrow';
 import Caret from './Caret';
 import { Link } from 'react-router-dom';
+import useClimbing from '../hooks/useClimbing';
 
 type Props = {
   coin: Coin;
 };
 
 const CoinCard: FC<Props> = ({ coin }) => {
-  const { id, name, history, image, latest, average } = coin;
+  const { id, name, history, image } = coin;
 
   const lastUpdated = useMemo(() => {
     const last = history[history.length - 1];
@@ -23,7 +24,7 @@ const CoinCard: FC<Props> = ({ coin }) => {
     }).format(new Date(last.date));
   }, [history]);
 
-  const climbing = useMemo(() => latest >= average, [latest, average]);
+  const climbing = useClimbing(coin);
 
   return (
     <div className="w-96 max-w-full rounded overflow-hidden shadow-lg">
