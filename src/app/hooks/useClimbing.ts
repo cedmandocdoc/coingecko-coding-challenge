@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 import Coin from '../../models/Coin';
 
 const useClimbing = (coin: Coin) => {
-  const { latest, history, average } = coin;
+  const { latest, history } = coin;
   return useMemo(() => {
-    const price = history[history.length - 2]?.price || average;
+    const price = Math.max(...history.map((item) => item.price));
     return latest >= price;
-  }, [latest, history, average]);
+  }, [latest, history]);
 };
 
 export default useClimbing;
